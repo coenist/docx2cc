@@ -1,6 +1,37 @@
-export const COURSE_ROOT = "course";
-export const COURSE_TITLE = "DOCX cursus";
-export const CONTENT_FOLDER_TITLE = "Cursusmateriaal";
+export const DEFAULT_COURSE_ROOT = "course-root";
+export const DEFAULT_CONTENT_FOLDER_TITLE = "orion-unit";
+
+function cleanPathSegment(value) {
+  return String(value || "")
+    .trim()
+    .replaceAll("\\", "/")
+    .replace(/^\/+/, "")
+    .replace(/\/+$/, "")
+    .replace(/\/+/g, "-")
+    .replace(/[<>:"|?*]+/g, "-")
+    .replace(/\s+/g, "-")
+    || "";
+}
+
+function readInputValue(id) {
+  const input = document.getElementById(id);
+
+  if (!input) {
+    return "";
+  }
+
+  return String(input.value || "").trim();
+}
+
+export function getCourseRoot() {
+  const value = cleanPathSegment(readInputValue("COURSE_ROOT"));
+  return value || DEFAULT_COURSE_ROOT;
+}
+
+export function getContentFolderTitle() {
+  const value = readInputValue("CONTENT_FOLDER_TITLE");
+  return value || DEFAULT_CONTENT_FOLDER_TITLE;
+}
 
 export const ENABLE_OMML_CONVERSION = true;
 

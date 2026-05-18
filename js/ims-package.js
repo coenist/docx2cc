@@ -1,4 +1,4 @@
-import { CONTENT_FOLDER_TITLE, COURSE_ROOT } from "./config.js";
+import { getContentFolderTitle, getCourseRoot } from "./config.js";
 import { state } from "./state.js";
 import { escapeXml, imsHref, uid } from "./utils.js";
 import { log } from "./ui.js";
@@ -25,11 +25,11 @@ function createManifest(chapters) {
         </item>`;
 
     let files = `
-      <file href="${imsHref(`${COURSE_ROOT}/${chapter.filename}`)}"/>`;
+      <file href="${imsHref(`${getCourseRoot()}/${chapter.filename}`)}"/>`;
 
     for (const asset of chapter.assets) {
       files += `
-      <file href="${imsHref(`${COURSE_ROOT}/${asset}`)}"/>`;
+      <file href="${imsHref(`${getCourseRoot()}/${asset}`)}"/>`;
     }
 
     resources += `
@@ -54,7 +54,7 @@ ${files}
     <organization identifier="${uid()}" structure="rooted-hierarchy">
       <item identifier="${uid()}">
         <item identifier="${uid()}">
-          <title>${escapeXml(CONTENT_FOLDER_TITLE)}</title>
+          <title>${escapeXml(getContentFolderTitle())}</title>
 ${items}
         </item>
       </item>
@@ -81,7 +81,7 @@ function getAssetsForChapters(chapters) {
   for (const chapter of chapters) {
     for (const asset of chapter.assets || []) {
       if (asset.startsWith("assets/")) {
-        assets.add(`${COURSE_ROOT}/${asset}`);
+        assets.add(`${getCourseRoot()}/${asset}`);
       }
     }
   }
@@ -103,7 +103,7 @@ export async function createZip() {
   zip.file("imsmanifest.xml", createManifest(selectedChapters));
 
   for (const chapter of selectedChapters) {
-    zip.file(`${COURSE_ROOT}/${chapter.filename}`, chapter.html);
+    zip.file(`${getCourseRoot()}/${chapter.filename}`, chapter.html);
   }
 
   log(`Writing selected assets to ZIP: ${selectedAssets.size}`);

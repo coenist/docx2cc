@@ -1,4 +1,4 @@
-import { COURSE_ROOT } from "./config.js";
+import { getCourseRoot } from "./config.js";
 import { state } from "./state.js";
 import { log } from "./ui.js";
 import { parseXml, serializeXml, getAttrAnyNs } from "./utils.js";
@@ -228,7 +228,7 @@ export async function texToSvgAsset(tex, display = false) {
 
   const svgText = serializeXml(svg);
   const name = `math_${crypto.randomUUID()}.svg`;
-  const zipPath = `${COURSE_ROOT}/assets/${name}`;
+  const zipPath = `${getCourseRoot()}/assets/${name}`;
   const htmlSrc = `assets/${name}`;
 
   state.assetFiles.set(zipPath, new Blob([svgText], { type: "image/svg+xml" }));

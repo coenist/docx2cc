@@ -1,4 +1,4 @@
-import { COURSE_ROOT } from "./config.js";
+import { getCourseRoot } from "./config.js";
 import { state } from "./state.js";
 import { base64ToBlob, getAttrAnyNs, parseXml } from "./utils.js";
 import {
@@ -255,7 +255,7 @@ export async function extractAllDocxMedia(arrayBuffer) {
         ? `media_${baseName}.png`
         : `media_${originalName}`;
 
-    const zipPath = `${COURSE_ROOT}/assets/${assetName}`;
+    const zipPath = `${getCourseRoot()}/assets/${assetName}`;
     const htmlSrc = `assets/${assetName}`;
 
     media.set(internalPath, {
@@ -303,7 +303,7 @@ export async function convertMammothImage(image) {
   }
 
   const name = `image_${crypto.randomUUID()}.${finalExt}`;
-  const zipPath = `${COURSE_ROOT}/assets/${name}`;
+  const zipPath = `${getCourseRoot()}/assets/${name}`;
   const htmlSrc = `assets/${name}`;
 
   state.assetFiles.set(zipPath, blob);

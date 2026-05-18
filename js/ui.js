@@ -1,6 +1,6 @@
 import { escapeXml } from "./utils.js";
 import { state } from "./state.js";
-import { COURSE_ROOT } from "./config.js";
+import { getCourseRoot } from "./config.js";
 
 export const els = {
   docxInput: document.getElementById("docxInput"),
@@ -164,7 +164,7 @@ function assetSrcToBlobUrl(src) {
     return src;
   }
 
-  const zipPath = `${COURSE_ROOT}/${src}`;
+  const zipPath = `${getCourseRoot()}/${src}`;
   const blob = state.assetFiles.get(zipPath);
 
   if (!blob) {
@@ -297,7 +297,7 @@ export function openChapter(index) {
   }
 
   for (const asset of imageAssets) {
-    const zipPath = `${COURSE_ROOT}/${asset}`;
+    const zipPath = `${getCourseRoot()}/${asset}`;
     const blob = state.assetFiles.get(zipPath);
 
     if (!blob) {
