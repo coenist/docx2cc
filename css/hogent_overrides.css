@@ -1,0 +1,177 @@
+@import './typography.css';
+
+html {
+    font-size: 18px !important;
+}
+
+body:not(.template-fallback) {
+    color: var(--courseware-color-default-font, #494c4e) !important;
+    font-family: var(--orion-font-body) !important;
+    font-size: var(--orion-fs-body) !important;
+    line-height: var(--orion-lh-body);
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+body:not(.template-fallback):has(.rsbtn) {
+    padding-block-start: 1.25rem;
+}
+
+body:not(.template-fallback) {
+    p {
+        font-family: inherit;
+        margin-block-start: 0;
+        margin-block-end: var(--orion-m-body);
+    }
+
+    p, ul, ol, li, td, th, caption {
+        font-size: inherit;
+        line-height: var(--orion-lh-body);
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+}
+
+body:not(.template-fallback) {
+    h1, h2, h3, h4, h5, h6 {
+        color: inherit;
+        font-family: var(--orion-font-heading) !important;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: var(--orion-fs-h1);
+        line-height: var(--orion-lh-h1);
+        font-weight: var(--orion-fw-h1);
+        margin-block-start: var(--orion-mt-h1);
+        margin-block-end: var(--orion-mb-h1);
+        letter-spacing: -0.01em;
+    }
+
+    h1::after {
+        content: none !important;
+    }
+
+    h2 {
+        color: var(--d2l-cplus-color-primary, #008eab);
+        font-size: var(--orion-fs-h2);
+        line-height: var(--orion-lh-h2);
+        font-weight: var(--orion-fw-h2);
+        margin-block-start: var(--orion-mt-h2);
+        margin-block-end: var(--orion-mb-h2);
+        letter-spacing: -0.01em;
+    }
+
+    h3 {
+        font-size: var(--orion-fs-h3);
+        line-height: var(--orion-lh-h3);
+        font-weight: var(--orion-fw-h3);
+        margin-block-start: var(--orion-mt-h3);
+        margin-block-end: var(--orion-mb-h3);
+    }
+
+    h4 {
+        font-size: var(--orion-fs-h4);
+        line-height: var(--orion-lh-h4);
+        font-weight: var(--orion-fw-h4);
+        margin-block-start: var(--orion-mt-h4);
+        margin-block-end: var(--orion-mb-h4);
+    }
+
+    h5 {
+        font-size: var(--orion-fs-h5);
+        line-height: var(--orion-lh-h5);
+        font-weight: var(--orion-fw-h5);
+        margin-block-start: var(--orion-mt-h5);
+        margin-block-end: var(--orion-mb-h5);
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+    }
+
+    h6 {
+        font-size: var(--orion-fs-h6);
+        line-height: var(--orion-lh-h6);
+        font-weight: var(--orion-fw-h6);
+        margin-block-start: var(--orion-mt-h6);
+        margin-block-end: var(--orion-mb-h6);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child,
+    h5:first-child,
+    h6:first-child {
+        margin-block-start: 0;
+    }
+}
+
+body:not(.template-fallback) {
+    a {
+        color: var(--d2l-color-celestine, #006fbf);
+        display: inline-block;
+        font-weight: 700;
+        text-decoration: none;
+        border: none;
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+        color: var(--d2l-color-celestine-minus-1, #004489);
+        border: none;
+    }
+
+    a[download]:after, a[target=_blank]:after {
+        background-color: var(--d2l-color-celestine, #006fbf);
+        content: "";
+        display: inline-block;
+        height: 18px;
+        margin-left: 3px;
+        width: 18px;
+    }
+
+    a[download]:hover:after, a[target=_blank]:hover:after,
+    a[download]:focus:after, a[target=_blank]:focus:after,
+    a[download]:active:after, a[target=_blank]:active:after {
+        background-color: var(--d2l-color-celestine-minus-1, #004489);
+    }
+
+    a[target=_blank]:after {
+        -webkit-mask: url(/shared/D2L/Courseware_HTML_Templates/V5/latest/_assets/img/new-window.svg);
+        mask: url(/shared/D2L/Courseware_HTML_Templates/V5/latest/_assets/img/new-window.svg);
+    }
+
+    a[download]:after {
+        -webkit-mask: url(/shared/D2L/Courseware_HTML_Templates/V5/latest/_assets/img/download.svg);
+        mask: url(/shared/D2L/Courseware_HTML_Templates/V5/latest/_assets/img/download.svg);
+    }
+}
+
+body:not(.template-fallback) {
+    .rsbtn {
+        margin-block-end: 1rem;
+    }
+
+    .rsbtn + * {
+        margin-block-start: 1rem;
+    }
+}
+
+/**
+ * MathJax (Brightspace-injected, v2 + v3 selectors)
+ */
+body:not(.template-fallback) {
+    .MathJax, .mjx-chtml, .mjx-container {
+        font-size: 1.2em !important;
+        color: inherit;
+        line-height: 0;
+    }
+}

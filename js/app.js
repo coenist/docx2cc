@@ -46,7 +46,7 @@ els.processBtn.addEventListener("click", async () => {
 
     els.downloadBtn.disabled = false;
     setStatus(
-      `${state.chapters.length} hoofdstukken gevonden. Controleer de preview en download daarna de ZIP.`,
+      `${state.chapters.length} hoofdstukken gevonden. Controleer de preview, selecteer de hoofdstukken en download daarna de ZIP.`,
     );
   } catch (error) {
     console.error(error);

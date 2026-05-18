@@ -1,0 +1,88 @@
+:root {
+    --courseware-color-default-font: #494c4e;
+
+    /* Fonts */
+    --orion-font-body: "Lato", system-ui, -apple-system, sans-serif;
+    --orion-font-heading: "Lato", system-ui, -apple-system, sans-serif;
+
+    /* Font sizes */
+    --orion-fs-body: 1rem;
+    --orion-fs-h1: 2.22rem;
+    --orion-fs-h2: 1.82rem;
+    --orion-fs-h3: 1.49rem;
+    --orion-fs-h4: 1.22rem;
+    --orion-fs-h5: 1.08rem;
+    --orion-fs-h6: 1rem;
+    --orion-fs-small: .875rem;
+
+    /* Line heights */
+    --orion-lh-body: 1.65;
+    --orion-lh-h1: 1.2;
+    --orion-lh-h2: 1.25;
+    --orion-lh-h3: 1.3;
+    --orion-lh-h4: 1.4;
+    --orion-lh-h5: 1.45;
+    --orion-lh-h6: 1.5;
+
+    /* Font weights */
+    --orion-fw-body: 400;
+    --orion-fw-h1: 700;
+    --orion-fw-h2: 700;
+    --orion-fw-h3: 700;
+    --orion-fw-h4: 700;
+    --orion-fw-h5: 700;
+    --orion-fw-h6: 700;
+
+    /* Spacing */
+    --orion-m-body: 1em;
+
+    --orion-mt-h1: 1.6em;
+    --orion-mt-h2: 1.4em;
+    --orion-mt-h3: 1.2em;
+    --orion-mt-h4: 1em;
+    --orion-mt-h5: 0.8em;
+    --orion-mt-h6: 0.6em;
+
+    --orion-mb-h1: 0.6em;
+    --orion-mb-h2: 0.5em;
+    --orion-mb-h3: 0.4em;
+    --orion-mb-h4: 0.3em;
+    --orion-mb-h5: 0.25em;
+    --orion-mb-h6: 0.25em;
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        /* Font sizes */
+        --orion-fs-body: 0.89rem; /* ~16px */
+        --orion-fs-h1: 1.67rem;  /* ~30px */
+        --orion-fs-h2: 1.33rem;  /* ~24px */
+        --orion-fs-h3: 1.11rem;  /* ~20px */
+        --orion-fs-h4: 1rem;     /* ~18px */
+        --orion-fs-h5: 0.89rem;  /* ~16px */
+        --orion-fs-h6: 0.89rem;
+        --orion-fs-small: 0.78rem; /* ~14px */
+
+        /* Line heights */
+        --orion-lh-body: 1.6;
+        --orion-lh-h1: 1.3;
+        --orion-lh-h2: 1.35;
+        --orion-lh-h3: 1.4;
+        --orion-lh-h4: 1.45;
+        --orion-lh-h5: 1.5;
+        --orion-lh-h6: 1.5;
+
+        /* Spacing */
+        --orion-m-body: 0.85em;
+        --orion-mt-h1: 1.1em;
+        --orion-mt-h2: 1em;
+        --orion-mt-h3: 0.9em;
+        --orion-mt-h4: 0.8em;
+        --orion-mt-h5: 0.7em;
+        --orion-mt-h6: 0.6em;
+
+        --orion-mb-h1: 0.45em;
+        --orion-mb-h2: 0.4em;
+        --orion-mb-h3: 0.35em;
+    }
+}
